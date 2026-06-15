@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🚀 AI LinkedIn Post Generator</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#0f172a;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+}
+
+.container{
+width:900px;
+max-width:100%;
+background:#1e293b;
+padding:25px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(0,0,0,0.4);
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
+color:#38bdf8;
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:12px;
+margin-top:12px;
+border:none;
+border-radius:8px;
+font-size:15px;
+}
+
+textarea{
+height:140px;
+resize:none;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:12px;
+border:none;
+border-radius:8px;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.generateBtn{
+background:#38bdf8;
+color:black;
+}
+
+.copyBtn{
+background:#22c55e;
+color:white;
+}
+
+.resetBtn{
+background:#ef4444;
+color:white;
+}
+
+button:hover{
+opacity:0.9;
+}
+
+.result{
+margin-top:20px;
+background:#0f172a;
+padding:15px;
+border-radius:10px;
+white-space:pre-wrap;
+line-height:1.6;
+min-height:150px;
+}
+
+.footer{
+text-align:center;
+margin-top:15px;
+font-size:13px;
+color:#94a3b8;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🚀 AI LinkedIn Post Generator</h2>
+
+<input
+type="text"
+id="projectName"
+placeholder="Enter Project Name">
+
+<input
+type="text"
+id="technology"
+placeholder="Enter Technologies Used (HTML, CSS, JavaScript, Python, React, SQL etc.)">
+
+<select id="difficulty">
+
+<option value="">Select Difficulty</option>
+
+<option value="Beginner">Beginner</option>
+
+<option value="Intermediate">Intermediate</option>
+
+<option value="Advanced">Advanced</option>
+
+</select>
+
+<textarea
+id="description"
+placeholder="Enter Project Description">
+</textarea>
+
+<button
+class="generateBtn"
+onclick="generateContent()">
+Generate LinkedIn Post
+</button>
+
+<button
+class="copyBtn"
+onclick="copyContent()">
+Copy Post
+</button>
+
+<button
+class="resetBtn"
+onclick="resetForm()">
+Reset
+</button>
+
+<div
+class="result"
+id="result">
+Generated LinkedIn post will appear here...
+</div>
+
+<div class="footer">
+Day 7 • 30 Days 30 AI Websites Challenge
+</div>
+
+</div>
+
+<script>
+
+function generateContent(){
+
+let project =
+document.getElementById("projectName").value.trim();
+
+let tech =
+document.getElementById("technology").value.trim();
+
+let difficulty =
+document.getElementById("difficulty").value;
+
+let description =
+document.getElementById("description").value.trim();
+
+if(
+project === "" ||
+tech === "" ||
+difficulty === "" ||
+description === ""
+){
+alert("Please fill all fields.");
+return;
+}
+
+let hashtags = [
+"#30Days30AIWebsites",
+"#BuildInPublic",
+"#StudentDeveloper",
+"#WebDevelopment"
+];
+
+let t = tech.toLowerCase();
+
+if(t.includes("python")) hashtags.push("#Python");
+if(t.includes("sql")) hashtags.push("#SQL");
+if(t.includes("pandas")) hashtags.push("#Pandas");
+if(t.includes("numpy")) hashtags.push("#NumPy");
+if(t.includes("machine learning")) hashtags.push("#MachineLearning");
+if(t.includes("deep learning")) hashtags.push("#DeepLearning");
+if(t.includes("data science")) hashtags.push("#DataScience");
+if(t.includes("data analysis")) hashtags.push("#DataAnalytics");
+if(t.includes("power bi")) hashtags.push("#PowerBI");
+if(t.includes("tableau")) hashtags.push("#Tableau");
+
+if(t.includes("html")) hashtags.push("#HTML");
+if(t.includes("css")) hashtags.push("#CSS");
+if(t.includes("javascript")) hashtags.push("#JavaScript");
+if(t.includes("react")) hashtags.push("#ReactJS");
+if(t.includes("next")) hashtags.push("#NextJS");
+if(t.includes("node")) hashtags.push("#NodeJS");
+if(t.includes("express")) hashtags.push("#ExpressJS");
+
+if(t.includes("mongodb")) hashtags.push("#MongoDB");
+if(t.includes("mysql")) hashtags.push("#MySQL");
+if(t.includes("postgresql")) hashtags.push("#PostgreSQL");
+
+if(t.includes("django")) hashtags.push("#Django");
+if(t.includes("flask")) hashtags.push("#Flask");
+if(t.includes("fastapi")) hashtags.push("#FastAPI");
+
+if(t.includes("aws")) hashtags.push("#AWS");
+if(t.includes("docker")) hashtags.push("#Docker");
+
+if(t.includes("git")) hashtags.push("#Git");
+if(t.includes("github")) hashtags.push("#GitHub");
+
+let difficultyText = "";
+
+switch(difficulty){
+
+case "Beginner":
+difficultyText =
+"🌱 This beginner-friendly project helped me strengthen my fundamentals and gain hands-on development experience.";
+break;
+
+case "Intermediate":
+difficultyText =
+"🚀 This intermediate-level project challenged me to apply concepts practically and improve my problem-solving skills.";
+break;
+
+case "Advanced":
+difficultyText =
+"🔥 This advanced-level project required deeper technical knowledge, architecture planning, and implementation skills.";
+break;
+
+default:
+difficultyText =
+"💡 This project helped me improve my development skills.";
+}
+
+let post =
+
+`🚀 Excited to share my latest project: ${project}
+
+📌 Description:
+${description}
+
+🛠 Technologies Used:
+${tech}
+
+📈 Difficulty Level:
+${difficulty}
+
+${difficultyText}
+
+This project is part of my 30 Days • 30 AI Websites Challenge, where I build and publish one AI-assisted website every day to improve my development, AI, and problem-solving skills.
+
+I would love to hear your feedback and suggestions.
+
+${hashtags.join(" ")}`;
+
+document.getElementById("result").innerText = post;
+
+}
+
+function copyContent(){
+
+let text =
+document.getElementById("result").innerText;
+
+navigator.clipboard.writeText(text);
+
+alert("LinkedIn post copied successfully!");
+
+}
+
+function resetForm(){
+
+document.getElementById("projectName").value = "";
+document.getElementById("technology").value = "";
+document.getElementById("difficulty").value = "";
+document.getElementById("description").value = "";
+
+document.getElementById("result").innerText =
+"Generated LinkedIn post will appear here...";
+
+}
+
+</script>
+
+</body>
+</html>
