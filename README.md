@@ -34,8 +34,6 @@ https://ai-linked-post-generator.netlify.app/
 
 ✅ Responsive UI
 
-✅ AI-Assisted Development
-
 ---
 
 ## 🛠 Technologies Used
@@ -43,6 +41,7 @@ https://ai-linked-post-generator.netlify.app/
 * HTML
 * CSS
 * JavaScript
+* AI-Assisted Development
 
 ---
 
